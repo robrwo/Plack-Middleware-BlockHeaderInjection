@@ -8,7 +8,7 @@ use parent qw( Plack::Middleware );
 use Plack::Util;
 use Plack::Util::Accessor qw( logger status );
 
-use version 0.77; our $VERSION = version->declare('v0.1.0');
+use version 0.77; our $VERSION = version->declare('v0.1.1');
 
 =head1 NAME
 
