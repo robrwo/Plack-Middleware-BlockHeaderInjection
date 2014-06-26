@@ -28,18 +28,21 @@ sub call {
 
             # Sanity check headers
 
-            my $headers = $res->[1];
-            while (my ($key, $val) = each %{$headers}) {
+            my @headers = @{$res->[1]};
+
+            while (my $key = shift @headers) {
+                my $val = shift @headers;
                 if ($val =~ /[\n\r]/) {
                     $self->log( error => 'possible header injection detected' );
                     $res->[0] = $self->status;
-                    Plack::Util::header_remove($headers, $key);
+                    Plack::Util::header_remove($res->[1], $key);
                     return $res;
                 }
             }
 
         }
     );
+
 }
 
 # Note: ideas borrowed from XSRFBlock
