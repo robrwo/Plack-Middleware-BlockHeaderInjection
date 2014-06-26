@@ -32,6 +32,12 @@ This middleware will check responses for injected headers. If the
 headers contain newlines, then the return code is set to C<500> and
 the offending header(s) are removed.
 
+A common source of header injections is when parameters are passed
+unchecked into a header (such as the redirection location).
+
+An attacker can use injected headers to bypass system security, by
+forging a header used for security (such as a referrer or cookie).
+
 =head1 OPTIONS
 
 =head2 C<status>
@@ -88,6 +94,10 @@ sub log {
         message => "BlockHeaderInjection: ${msg}",
     });
 }
+
+=head1 SEE ALSO
+
+L<https://en.wikipedia.org/wiki/HTTP_header_injection>
 
 =head1 AUTHOR
 
