@@ -17,3 +17,6 @@ Plack-Middleware-.*v\d+\.\d+\.\d+/
 
 ^xt/
 
+# Travis-CI
+
+\.travis\.yml
