@@ -8,7 +8,7 @@ use parent qw( Plack::Middleware );
 use Plack::Util;
 use Plack::Util::Accessor qw( logger status );
 
-use version 0.77; our $VERSION = version->declare('v0.1.0');
+use version 0.77; our $VERSION = version->declare('v0.1.1');
 
 =head1 NAME
 
@@ -31,6 +31,12 @@ Plack::Middleware::BlockHeaderInjection - block header injections in responses
 This middleware will check responses for injected headers. If the
 headers contain newlines, then the return code is set to C<500> and
 the offending header(s) are removed.
+
+A common source of header injections is when parameters are passed
+unchecked into a header (such as the redirection location).
+
+An attacker can use injected headers to bypass system security, by
+forging a header used for security (such as a referrer or cookie).
 
 =head1 OPTIONS
 
@@ -89,9 +95,21 @@ sub log {
     });
 }
 
+=head1 SEE ALSO
+
+L<https://en.wikipedia.org/wiki/HTTP_header_injection>
+
 =head1 AUTHOR
 
 Robert Rothenberg, C<< <rrwo at cpan.org> >>
+
+=head1 ACKNOWLEDGEMENTS
+
+=over
+
+=item Foxtons, Ltd.
+
+=back
 
 =head1 LICENSE AND COPYRIGHT
 

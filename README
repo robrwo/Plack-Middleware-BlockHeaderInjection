@@ -18,13 +18,25 @@ DESCRIPTION
     headers contain newlines, then the return code is set to `500' and the
     offending header(s) are removed.
 
+    A common source of header injections is when parameters are passed
+    unchecked into a header (such as the redirection location).
+
+    An attacker can use injected headers to bypass system security, by
+    forging a header used for security (such as a referrer or cookie).
+
 OPTIONS
   `status'
     The status code to return if an invalid header is found. By default,
     this is `500'.
 
+SEE ALSO
+    https://en.wikipedia.org/wiki/HTTP_header_injection
+
 AUTHOR
     Robert Rothenberg, `<rrwo at cpan.org>'
+
+ACKNOWLEDGEMENTS
+    Foxtons, Ltd.
 
 LICENSE AND COPYRIGHT
     Copyright 2014 Robert Rothenberg.
