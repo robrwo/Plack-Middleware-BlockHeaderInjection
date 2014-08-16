@@ -4,7 +4,7 @@ use inc::Module::Install;
 
 name     'Plack-Middleware-BlockHeaderInjection';
 all_from 'lib/Plack/Middleware/BlockHeaderInjection.pm';
-license  'artistic2';
+license  'artistic_2';
 
 perl_version 5.010;
 
