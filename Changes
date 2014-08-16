@@ -10,7 +10,7 @@ v0.1.1
   - Reformatted Changes.
 
   [Other Changes]
-   - Added config for travis-ci in git repo.
+  - Fixed license in Makefile.PL for CPANTS.
 
 v0.1.0  2014-06-26
 
