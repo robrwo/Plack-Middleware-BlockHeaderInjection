@@ -1,6 +1,6 @@
 Revision history for Plack::Middleware::BlockHeaderInjection
 
-v0.1.1
+v0.1.1  2014-08-16
 
   [Documentation]
   - Added POD explaining what header injections are.
