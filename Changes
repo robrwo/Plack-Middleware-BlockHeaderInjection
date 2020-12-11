@@ -1,4 +1,11 @@
-Revision history for Plack::Middleware::BlockHeaderInjection
+Revision history for {{ $dist->name }}
+
+{{$NEXT}}
+  [Toolchain]
+  - Change distribution to use Dist::Zilla for building.
+
+  [Other]
+  - Bumped version to v1.0.0.
 
 v0.1.1  2014-08-16
 
