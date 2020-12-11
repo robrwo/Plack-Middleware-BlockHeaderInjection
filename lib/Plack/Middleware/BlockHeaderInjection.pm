@@ -2,6 +2,8 @@ package Plack::Middleware::BlockHeaderInjection;
 
 # ABSTRACT: block header injections in responses
 
+use v5.8;
+
 use strict;
 use warnings;
 
