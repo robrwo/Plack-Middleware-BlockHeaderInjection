@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+  [Toolchain]
+  - Fixed error in Dist::Zilla config.
 
 v1.0.0    2020-12-11 15:29:14+00:00 Europe/London
   [Toolchain]
