@@ -16,6 +16,9 @@ Revision history for {{ $dist->name }}
 
   - Updated MANIFEST.SKIP rules.
 
+  [Other]
+  - Perltidied the source code.
+
 v1.0.1    2020-12-11 15:32:37+00:00 Europe/London
   [Toolchain]
   - Fixed error in Dist::Zilla config.

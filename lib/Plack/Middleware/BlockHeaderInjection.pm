@@ -47,8 +47,8 @@ sub call {
     my ( $self, $env ) = @_;
 
     # cache the logger
-    $self->logger($env->{'psgix.logger'} || sub { })
-        unless defined $self->logger;
+    $self->logger( $env->{'psgix.logger'} || sub { } )
+      unless defined $self->logger;
 
     $self->status(500) unless $self->status;
 
@@ -64,16 +64,15 @@ sub call {
             my $hdrs = $res->[1];
 
             my $i = 0;
-            while ($i < @{$hdrs}) {
-                my $val = $hdrs->[$i+1];
-                if ($val =~ /[\n\r]/) {
+            while ( $i < @{$hdrs} ) {
+                my $val = $hdrs->[ $i + 1 ];
+                if ( $val =~ /[\n\r]/ ) {
                     my $key = $hdrs->[$i];
-                    $self->log(
-                        error => "possible header injection detected in ${key}" );
+                    $self->log( error => "possible header injection detected in ${key}" );
                     $res->[0] = $self->status;
-                    Plack::Util::header_remove($hdrs, $key);
+                    Plack::Util::header_remove( $hdrs, $key );
                 }
-                $i+=2;
+                $i += 2;
             }
 
         }
@@ -88,11 +87,13 @@ sub call {
 =cut
 
 sub log {
-    my ($self, $level, $msg) = @_;
-    $self->logger->({
-        level   => $level,
-        message => "BlockHeaderInjection: ${msg}",
-    });
+    my ( $self, $level, $msg ) = @_;
+    $self->logger->(
+        {
+            level   => $level,
+            message => "BlockHeaderInjection: ${msg}",
+        }
+    );
 }
 
 =head1 SUPPORT FOR OLDER PERL VERSIONS
