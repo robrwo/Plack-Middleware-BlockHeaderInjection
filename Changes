@@ -5,6 +5,8 @@ Revision history for {{ $dist->name }}
   - Updated copyright year.
 
   [Toolchain]
+  - Sign the distribution.
+
   - Removed `.travis.yml` from repo.
 
 v1.0.1    2020-12-11 15:32:37+00:00 Europe/London
