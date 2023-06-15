@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+  [Incompatible Changes]
+  - Bumpted the minimum version of Perl to v5.12.
+
   [Documentation]
   - Updated copyright year.
 

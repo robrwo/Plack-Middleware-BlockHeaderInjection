@@ -2,9 +2,7 @@ package Plack::Middleware::BlockHeaderInjection;
 
 # ABSTRACT: block header injections in responses
 
-use v5.8;
-
-use strict;
+use v5.12;
 use warnings;
 
 use parent qw( Plack::Middleware );

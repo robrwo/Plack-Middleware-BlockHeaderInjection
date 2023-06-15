@@ -3,8 +3,7 @@
 
 requires "Plack::Middleware" => "0";
 requires "parent" => "0";
-requires "perl" => "v5.8.0";
-requires "strict" => "0";
+requires "perl" => "v5.12.0";
 requires "warnings" => "0";
 
 on 'test' => sub {
@@ -18,6 +17,7 @@ on 'test' => sub {
   requires "Plack::Test" => "0";
   requires "Test::Differences" => "0";
   requires "Test::More" => "0";
+  requires "strict" => "0";
 };
 
 on 'test' => sub {
