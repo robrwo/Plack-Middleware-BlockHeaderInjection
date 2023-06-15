@@ -95,6 +95,15 @@ sub log {
     });
 }
 
+=head1 SUPPORT FOR OLDER PERL VERSIONS
+
+Since v1.1.0, this module requires Perl v5.12 or later.
+
+Future releases may only support Perl versions released in the last ten years.
+
+If you need this module on Perl v5.8, please use one of the v1.0.x versions of this module.  Signficant bug or security
+fixes may be backported to those versions.
+
 =head1 SEE ALSO
 
 L<https://en.wikipedia.org/wiki/HTTP_header_injection>
