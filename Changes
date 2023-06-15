@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+  [Documentation]
+  - Updated copyright year.
+
   [Toolchain]
   - Removed `.travis.yml` from repo.
 

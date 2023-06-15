@@ -66,7 +66,7 @@ Foxtons, Ltd [https://www.foxtons.co.uk](https://www.foxtons.co.uk).
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2014,2020 by Robert Rothenberg.
+This software is Copyright (c) 2014,2020,2023 by Robert Rothenberg.
 
 This is free software, licensed under:
 
