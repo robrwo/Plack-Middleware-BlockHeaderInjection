@@ -1,10 +1,12 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+  [Documentation]
+  - Fixed typo in Changes.
 
 v1.1.0    2023-06-15 23:44:37+01:00 Europe/London
   [Incompatible Changes]
-  - Bumpted the minimum version of Perl to v5.12.
+  - Bumped the minimum version of Perl to v5.12.
 
   [Documentation]
   - Documented the support policy for earlier Perl versions.
