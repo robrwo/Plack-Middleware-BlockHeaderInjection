@@ -73,6 +73,10 @@ Robert Rothenberg <rrwo@cpan.org>
 The initial development of this module was supported by
 Foxtons, Ltd [https://www.foxtons.co.uk](https://www.foxtons.co.uk).
 
+# CONTRIBUTOR
+
+Graham Knop <haarg@haarg.org>
+
 # COPYRIGHT AND LICENSE
 
 This software is Copyright (c) 2014,2020,2023 by Robert Rothenberg.
