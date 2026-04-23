@@ -45,13 +45,17 @@ this is C<500>.
 
 =cut
 
+sub prepare_app($self) {
+
+    $self->status(500) unless $self->status;
+
+}
+
 sub call( $self, $env ) {
 
     # cache the logger
     $self->logger( $env->{'psgix.logger'} || sub { } )
       unless defined $self->logger;
-
-    $self->status(500) unless $self->status;
 
     my $res = $self->app->($env);
 

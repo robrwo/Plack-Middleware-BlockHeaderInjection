@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}
   [Enhancements]
   - Blocks all characters between 0x00 through 0x1f as per the PSGI specification (GH#1).
 
+  - Initialisation is not run in every request.
+
   [Incompatabilities]
   - Perl v5.24 or later is required.
 
