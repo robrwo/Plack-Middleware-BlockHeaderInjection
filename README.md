@@ -46,6 +46,7 @@ Changes for version v1.2.0 (2026-04-23)
     - Add doap.xml to the distribution.
 - Tests
     - Added missing perlcritic.rc for author tests.
+    - Moved author tests into xt.
 - Toolchain
     - MANIFEST.SKIP is now static and not rebuilt with buggy Dist::Zilla plugins.
     - Fix issues with the Dist::Zilla configuration.

@@ -25,6 +25,8 @@ Revision history for {{ $dist->name }}
   [Tests]
   - Added missing perlcritic.rc for author tests.
 
+  - Moved author tests into xt.
+
   [Toolchain]
   - MANIFEST.SKIP is now static and not rebuilt with buggy Dist::Zilla plugins.
 
