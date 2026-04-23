@@ -10,7 +10,7 @@ use parent qw( Plack::Middleware );
 use Plack::Util;
 use Plack::Util::Accessor qw( logger status );
 
-our $VERSION = 'v1.1.2';
+our $VERSION = 'v1.2.0';
 
 =head1 SYNOPSIS
 

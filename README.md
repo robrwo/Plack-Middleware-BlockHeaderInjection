@@ -4,7 +4,7 @@ Plack::Middleware::BlockHeaderInjection - block header injections in responses
 
 # VERSION
 
-version v1.1.1
+version v1.2.0
 
 # SYNOPSIS
 
