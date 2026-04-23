@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+
+v1.2.0    2026-04-23 23:22:39+01:00 Europe/London
   [Enhancements]
   - Blocks all characters between 0x00 through 0x1f as per the PSGI specification (GH#1).
 
