@@ -36,7 +36,7 @@ unchecked into a header (such as the redirection location).
 An attacker can use injected headers to bypass system security, by
 forging a header used for security (such as a referrer or cookie).
 
-=attr <status
+=attr status
 
 The status code to return if an invalid header is found. By default,
 this is C<500>.

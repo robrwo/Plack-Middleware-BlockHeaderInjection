@@ -34,7 +34,7 @@ forging a header used for security (such as a referrer or cookie).
 
 # ATTRIBUTES
 
-## &lt;status
+## status
 
 The status code to return if an invalid header is found. By default,
 this is `500`.
