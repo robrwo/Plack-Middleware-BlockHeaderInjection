@@ -16,11 +16,15 @@ Revision history for {{ $dist->name }}
 
   - Fixed link in the SOURCE section.
 
+  - Added LICENSE and SECURITY.md.
+
   [Tests]
   - Added missing perlcritic.rc for author tests.
 
   [Toolchain]
   - MANIFEST.SKIP is now static and not rebuilt with buggy Dist::Zilla plugins.
+
+  - Fix issues with the Dist::Zilla configuration.
 
 v1.1.1    2023-06-19 09:41:15+01:00 Europe/London
   [Documentation]
