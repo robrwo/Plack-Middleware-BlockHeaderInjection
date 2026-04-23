@@ -7,10 +7,15 @@ requires "parent" => "0";
 requires "perl" => "v5.24.0";
 requires "warnings" => "0";
 
+on 'build' => sub {
+  requires "ExtUtils::MakeMaker" => "7.22";
+  requires "Module::Metadata" => "1.000015";
+};
+
 on 'test' => sub {
   requires "File::Spec" => "0";
   requires "HTTP::Request" => "0";
-  requires "Module::Metadata" => "0";
+  requires "Module::Metadata" => "1.000015";
   requires "Plack::Builder" => "0";
   requires "Plack::Middleware::ContentLength" => "0";
   requires "Plack::Request" => "0";
@@ -31,7 +36,8 @@ on 'configure' => sub {
 
 on 'develop' => sub {
   requires "Pod::Coverage::TrustPod" => "0";
-  requires "Software::Security::Policy::Individual" => "0";
+  requires "Software::Security::Policy::Individual" => "0.10";
+  requires "Test::CVE" => "0.08";
   requires "Test::EOF" => "0";
   requires "Test::EOL" => "0";
   requires "Test::Kwalitee" => "1.21";
