@@ -2,13 +2,15 @@ package Plack::Middleware::BlockHeaderInjection;
 
 # ABSTRACT: block header injections in responses
 
-use v5.12;
+use v5.24;
 use warnings;
 
 use parent qw( Plack::Middleware );
 
 use Plack::Util;
 use Plack::Util::Accessor qw( logger status );
+
+use experimental qw( signatures );
 
 our $VERSION = 'v1.2.0';
 
@@ -43,8 +45,7 @@ this is C<500>.
 
 =cut
 
-sub call {
-    my ( $self, $env ) = @_;
+sub call( $self, $env ) {
 
     # cache the logger
     $self->logger( $env->{'psgix.logger'} || sub { } )
@@ -64,7 +65,7 @@ sub call {
             my $hdrs = $res->[1];
 
             my $i = 0;
-            while ( $i < @{$hdrs} ) {
+            while ( $i < $hdrs->@* ) {
                 my $val = $hdrs->[ $i + 1 ];
                 if ( $val =~ /[\N{U+00}-\N{U+1f}]/ ) {
                     my $key = $hdrs->[$i];
@@ -86,8 +87,7 @@ sub call {
 
 =cut
 
-sub log {
-    my ( $self, $level, $msg ) = @_;
+sub log( $self, $level, $msg ) {
     $self->logger->(
         {
             level   => $level,
@@ -98,12 +98,9 @@ sub log {
 
 =head1 SUPPORT FOR OLDER PERL VERSIONS
 
-Since v1.1.0, this module requires Perl v5.12 or later.
+This module requires Perl v5.24 or later.
 
 Future releases may only support Perl versions released in the last ten years.
-
-If you need this module on Perl v5.8, please use one of the v1.0.x versions of this module.  Signficant bug or security
-fixes may be backported to those versions.
 
 =head1 SEE ALSO
 
