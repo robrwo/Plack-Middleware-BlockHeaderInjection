@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}
 
 {{$NEXT}}
   [Enhancements]
-  - Blocks all characters between 0x00 through 0x1f as per the PSGI specification.
+  - Blocks all characters between 0x00 through 0x1f as per the PSGI specification (GH#1).
 
   [Documentation]
   - Fixed POD errors.
