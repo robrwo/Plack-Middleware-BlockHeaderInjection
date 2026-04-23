@@ -26,9 +26,9 @@ our $VERSION = 'v1.1.2';
 
 =head1 DESCRIPTION
 
-This middleware will check responses for injected headers. If the
-headers contain newlines, then the return code is set to C<500> and
-the offending header(s) are removed.
+This middleware will check response headers for control characters (codes 0 through 31) (which also includes newlines that can be used for header injections).
+These  are not allowed according to the L<PSGI specification|https://metacpan.org/pod/PSGI#Headers>.
+If they are found, then it will the return code is set to C<500> and the offending header(s) are removed.
 
 A common source of header injections is when parameters are passed
 unchecked into a header (such as the redirection location).
@@ -66,7 +66,7 @@ sub call {
             my $i = 0;
             while ( $i < @{$hdrs} ) {
                 my $val = $hdrs->[ $i + 1 ];
-                if ( $val =~ /[\n\r]/ ) {
+                if ( $val =~ /[\N{U+00}-\N{U+1f}]/ ) {
                     my $key = $hdrs->[$i];
                     $self->log( error => "possible header injection detected in ${key}" );
                     $res->[0] = $self->status;

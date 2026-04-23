@@ -22,9 +22,9 @@ $app = builder {
 
 # DESCRIPTION
 
-This middleware will check responses for injected headers. If the
-headers contain newlines, then the return code is set to `500` and
-the offending header(s) are removed.
+This middleware will check response headers for control characters (codes 0 through 31) (which also includes newlines that can be used for header injections).
+These  are not allowed according to the [PSGI specification](https://metacpan.org/pod/PSGI#Headers).
+If they are found, then it will the return code is set to `500` and the offending header(s) are removed.
 
 A common source of header injections is when parameters are passed
 unchecked into a header (such as the redirection location).
