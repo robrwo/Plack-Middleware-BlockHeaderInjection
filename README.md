@@ -2,10 +2,6 @@
 
 Plack::Middleware::BlockHeaderInjection - block header injections in responses
 
-# VERSION
-
-version v1.2.0
-
 # SYNOPSIS
 
 ```perl
@@ -32,27 +28,74 @@ unchecked into a header (such as the redirection location).
 An attacker can use injected headers to bypass system security, by
 forging a header used for security (such as a referrer or cookie).
 
-# ATTRIBUTES
+# RECENT CHANGES
 
-## status
+Changes for version v1.2.0 (2026-04-23)
 
-The status code to return if an invalid header is found. By default,
-this is `500`.
+- Enhancements
+    - Blocks all characters between 0x00 through 0x1f as per the PSGI specification (GH#1).
+    - Initialisation is not run in every request.
+- Incompatabilities
+    - Perl v5.24 or later is required.
+- Documentation
+    - Fixed POD errors.
+    - Update copyright year.
+    - Fixed link in the SOURCE section.
+    - Added LICENSE and SECURITY.md.
+    - Generate README using the UsefulReadme plugin.
+- Tests
+    - Added missing perlcritic.rc for author tests.
+- Toolchain
+    - MANIFEST.SKIP is now static and not rebuilt with buggy Dist::Zilla plugins.
+    - Fix issues with the Dist::Zilla configuration.
+    - Updated build and development requirements.
 
-# SUPPORT FOR OLDER PERL VERSIONS
+See the `Changes` file for more details.
 
-This module requires Perl v5.24 or later.
+# REQUIREMENTS
 
-Future releases may only support Perl versions released in the last ten years.
+This module lists the following modules as runtime dependencies:
 
-# SEE ALSO
+- [Plack::Middleware](https://metacpan.org/pod/Plack%3A%3AMiddleware)
+- [experimental](https://metacpan.org/pod/experimental)
+- [parent](https://metacpan.org/pod/parent)
+- [perl](https://metacpan.org/pod/perl) version v5.24.0 or later
+- [warnings](https://metacpan.org/pod/warnings)
 
-[https://en.wikipedia.org/wiki/HTTP\_header\_injection](https://en.wikipedia.org/wiki/HTTP_header_injection)
+See the `cpanfile` file for the full list of prerequisites.
 
-# SOURCE
+# INSTALLATION
 
-The development version is on github at [https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection](https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection)
-and may be cloned from [https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git](https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git)
+The latest version of this module (along with any dependencies) can be installed from [CPAN](https://www.cpan.org) with the `cpan` tool that is included with Perl:
+
+```
+cpan Plack::Middleware::BlockHeaderInjection
+```
+
+You can also extract the distribution archive and install this module (along with any dependencies):
+
+```
+cpan .
+```
+
+You can also install this module manually using the following commands:
+
+```
+perl Makefile.PL
+make
+make test
+make install
+```
+
+If you are working with the source repository, then it may not have a `Makefile.PL` file.  But you can use the [Dist::Zilla](https://dzil.org/) tool in anger to build and install this module:
+
+```
+dzil build
+dzil test
+dzil install --install-command="cpan ."
+```
+
+For more information, see the `INSTALL` file included with this distribution.
 
 # BUGS
 
@@ -62,6 +105,11 @@ Please report any bugs or feature requests on the bugtracker website
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired
 feature.
+
+# SOURCE
+
+The development version is on github at [https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection](https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection)
+and may be cloned from [https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git](https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git)
 
 # AUTHOR
 
@@ -83,3 +131,7 @@ This is free software, licensed under:
 ```
 The Artistic License 2.0 (GPL Compatible)
 ```
+
+# SEE ALSO
+
+[https://en.wikipedia.org/wiki/HTTP\_header\_injection](https://en.wikipedia.org/wiki/HTTP_header_injection)

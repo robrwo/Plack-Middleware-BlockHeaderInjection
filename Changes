@@ -18,6 +18,8 @@ Revision history for {{ $dist->name }}
 
   - Added LICENSE and SECURITY.md.
 
+  - Generate README using the UsefulReadme plugin.
+
   [Tests]
   - Added missing perlcritic.rc for author tests.
 
