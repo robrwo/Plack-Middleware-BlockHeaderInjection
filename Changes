@@ -20,6 +20,8 @@ Revision history for {{ $dist->name }}
 
   - Generate README using the UsefulReadme plugin.
 
+  - Add doap.xml to the distribution.
+
   [Tests]
   - Added missing perlcritic.rc for author tests.
 

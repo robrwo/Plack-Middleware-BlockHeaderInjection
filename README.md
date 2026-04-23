@@ -43,6 +43,7 @@ Changes for version v1.2.0 (2026-04-23)
     - Fixed link in the SOURCE section.
     - Added LICENSE and SECURITY.md.
     - Generate README using the UsefulReadme plugin.
+    - Add doap.xml to the distribution.
 - Tests
     - Added missing perlcritic.rc for author tests.
 - Toolchain
