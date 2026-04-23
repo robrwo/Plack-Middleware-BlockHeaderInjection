@@ -55,7 +55,7 @@ fixes may be backported to those versions.
 # SOURCE
 
 The development version is on github at [https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection](https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection)
-and may be cloned from [git://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git](git://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git)
+and may be cloned from [https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git](https://github.com/robrwo/Plack-Middleware-BlockHeaderInjection.git)
 
 # BUGS
 

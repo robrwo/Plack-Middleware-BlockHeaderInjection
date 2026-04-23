@@ -9,6 +9,8 @@ Revision history for {{ $dist->name }}
 
   - Update copyright year.
 
+  - Fixed link in the SOURCE section.
+
   [Tests]
   - Added missing perlcritic.rc for author tests.
 
