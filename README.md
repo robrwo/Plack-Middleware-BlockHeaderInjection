@@ -44,6 +44,7 @@ Changes for version v1.2.0 (2026-04-23)
     - Added LICENSE and SECURITY.md.
     - Generate README using the UsefulReadme plugin.
     - Add doap.xml to the distribution.
+    - Updated author email due to issues with cpan.org addresses.
 - Tests
     - Added missing perlcritic.rc for author tests.
     - Moved author tests into xt.
@@ -115,7 +116,7 @@ and may be cloned from [https://github.com/robrwo/Plack-Middleware-BlockHeaderIn
 
 # AUTHOR
 
-Robert Rothenberg <rrwo@cpan.org>
+Robert Rothenberg <perl@rhizomnic.com>
 
 The initial development of this module was supported by
 Foxtons, Ltd [https://www.foxtons.co.uk](https://www.foxtons.co.uk).

@@ -22,6 +22,8 @@ Revision history for {{ $dist->name }}
 
   - Add doap.xml to the distribution.
 
+  - Updated author email due to issues with cpan.org addresses.
+
   [Tests]
   - Added missing perlcritic.rc for author tests.
 
