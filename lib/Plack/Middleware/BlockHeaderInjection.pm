@@ -8,11 +8,11 @@ use warnings;
 use parent qw( Plack::Middleware );
 
 use Plack::Util;
-use Plack::Util::Accessor qw( logger status );
+use Plack::Util::Accessor qw( logger status clean );
 
 use experimental qw( signatures );
 
-our $VERSION = 'v1.2.1';
+our $VERSION = 'v1.3.0';
 
 =head1 SYNOPSIS
 
@@ -43,12 +43,21 @@ forging a header used for security (such as a referrer or cookie).
 The status code to return if an invalid header is found. By default,
 this is C<500>.
 
+=attr clean
+
+When this is true, null bytes, newlines and carriage returns are changed into whitespace rather than rejected.
+This should be set when there are legitimate multi-line headers that need to be cleaned up for L<PSGI>.
+
+This defaults to false.
+
+Added in v1.3.0
+
 =cut
 
 sub prepare_app($self) {
 
     $self->status(500) unless $self->status;
-
+    $self->clean( !!$self->clean );
 }
 
 sub call( $self, $env ) {
@@ -70,16 +79,17 @@ sub call( $self, $env ) {
 
             my $i = 0;
             while ( $i < $hdrs->@* ) {
-                my $val = $hdrs->[ $i + 1 ];
+                my ( $key, $val ) = ( $hdrs->[$i], $hdrs->[ $i + 1 ] );
+                if ( $self->clean && $val =~ s/[\N{U+00}\n\r]+/ /gm ) {
+                    Plack::Util::header_set( $hdrs, $key, $val );
+                }
                 if ( $val =~ /[\N{U+00}-\N{U+1f}]/ ) {
-                    my $key = $hdrs->[$i];
                     $self->log( error => "possible header injection detected in ${key}" );
                     $res->[0] = $self->status;
                     Plack::Util::header_remove( $hdrs, $key );
                 }
                 $i += 2;
             }
-
         }
     );
 
