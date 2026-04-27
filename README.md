@@ -30,10 +30,10 @@ forging a header used for security (such as a referrer or cookie).
 
 # RECENT CHANGES
 
-Changes for version v1.3.0 (2026-04-24)
+Changes for version v1.3.1 (2026-04-27)
 
-- Enhancements
-    - Added a clean option to replace newlines with whitespace.
+- Toolchain
+    - Stopped using Module::Signature for signing modules.
 
 See the `Changes` file for more details.
 
