@@ -30,8 +30,10 @@ forging a header used for security (such as a referrer or cookie).
 
 # RECENT CHANGES
 
-Changes for version v1.3.1 (2026-04-27)
+Changes for version v1.3.1 (2026-04-30)
 
+- Documentation
+    - Added link to Plack::Middleware::Lint in the SEE ALSO.
 - Toolchain
     - Stopped using Module::Signature for signing modules.
 
@@ -120,3 +122,5 @@ The Artistic License 2.0 (GPL Compatible)
 # SEE ALSO
 
 [https://en.wikipedia.org/wiki/HTTP\_header\_injection](https://en.wikipedia.org/wiki/HTTP_header_injection)
+
+[Plack::Middleware::Lint](https://metacpan.org/pod/Plack%3A%3AMiddleware%3A%3ALint)

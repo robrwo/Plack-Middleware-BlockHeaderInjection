@@ -120,6 +120,8 @@ Future releases may only support Perl versions released in the last ten years.
 
 L<https://en.wikipedia.org/wiki/HTTP_header_injection>
 
+L<Plack::Middleware::Lint>
+
 =head1 append:AUTHOR
 
 The initial development of this module was supported by
