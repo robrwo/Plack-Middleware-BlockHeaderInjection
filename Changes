@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}
 
 {{$NEXT}}
+
+v1.3.1    2026-05-02 18:12:51+01:00 Europe/London
   [Documentation]
   - Added link to Plack::Middleware::Lint in the SEE ALSO.
 

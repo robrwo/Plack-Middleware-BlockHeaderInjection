@@ -12,7 +12,7 @@ use Plack::Util::Accessor qw( logger status clean );
 
 use experimental qw( signatures );
 
-our $VERSION = 'v1.3.1';
+our $VERSION = 'v1.3.2';
 
 =head1 SYNOPSIS
 
