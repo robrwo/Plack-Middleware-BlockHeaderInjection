@@ -30,14 +30,10 @@ forging a header used for security (such as a referrer or cookie).
 
 # RECENT CHANGES
 
-Changes for version v1.3.1 (2026-05-02)
+Changes for version v1.3.2 (2026-05-02)
 
-- Documentation
-    - Added link to Plack::Middleware::Lint in the SEE ALSO.
-- Toolchain
-    - Stopped using Module::Signature for signing modules.
 - Tests
-    - Changed author tests to use Test::DistManifest.
+    - Added more author tests.
 
 See the `Changes` file for more details.
 

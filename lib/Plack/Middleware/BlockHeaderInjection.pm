@@ -122,6 +122,8 @@ L<https://en.wikipedia.org/wiki/HTTP_header_injection>
 
 L<Plack::Middleware::Lint>
 
+=for stopwords Foxtons
+
 =head1 append:AUTHOR
 
 The initial development of this module was supported by
